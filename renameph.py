@@ -42,7 +42,13 @@ filename=args.file
 #Open file
 
 f = open(filename, 'r')
+
+#read file
+
 htmldata=f.read()
+
+#progress the file
+
 lines=reimageline(htmldata)
 img_info=[]
 for line_element in lines:
