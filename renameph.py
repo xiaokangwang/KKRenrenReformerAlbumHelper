@@ -14,7 +14,12 @@ group.add_argument("-v", "--verbose", action="store_true")
 group.add_argument("-q", "--quiet", action="store_true")
 thearg.add_argument("file", type=list, help="the file to be proceed")
 args = thearg.parse_args()
-#
+
+#make args into data to be used later
+
+filename=args.file
 
 #Open file
-#f = open('workfile', 'r')
+
+#f = open(filename, 'r')
+
