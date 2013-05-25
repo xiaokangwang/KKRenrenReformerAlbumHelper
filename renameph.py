@@ -1,6 +1,7 @@
 #! /usr/bin/env python3.3
 import re
 import argparse
+from shutil import copy
 
 def reimageline(stringtoparse):
 
@@ -43,8 +44,12 @@ def createnewfilename(itemtoproceed):
 
 	#create new name
 
-	the_filename_new=itemtoproceed['ind']+"-"+thehtmlname+"."+theimgext
+	the_filename_new=thehtmlname+"-"+itemtoproceed['ind'].zfill(3)+"."+theimgext
 	itemtoproceed["new_name"]=the_filename_new
+
+def imgname_apply_change(applyitem):
+	copy(applyitem['src'],"./KKRenrenReformerImage/"+applyitem['new_name'])
+	pass
 
 #show brief use of this script
 
@@ -87,7 +92,10 @@ for line_element in lines:
 for img_info_element in img_info:
 	createnewfilename(img_info_element)
 
-print(img_info)
+#apply new file name
+for img_info_element in img_info:
+	imgname_apply_change(img_info_element)
+
 
 
 
