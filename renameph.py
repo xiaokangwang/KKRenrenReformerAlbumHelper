@@ -29,8 +29,19 @@ def getinfo(stringtoparse):
 
 	return imginfo
 
-def createnewfilename(itemtoproceed,htmlfilename):
-	pass
+def createnewfilename(itemtoproceed):
+	#get html nane without ext
+
+	re_htmlname = re.compile("""^([^\t\n\r\f\v]+?)\.(html|htm)$""")
+	htmlname = re_htmlname.findall(filename) 
+	thehtmlname = htmlname[0][0]
+
+	#get image file ext
+	re_imgext = re.compile("""(\.)*(\S*?)(\.(\S*?)$)""")
+	img_ext = re_imgext.findall(itemtoproceed["src"]) 
+	theimgext = img_ext[0][-1]
+
+	#create new name
 
 #show brief use of this script
 
@@ -69,7 +80,9 @@ for line_element in lines:
 	alineinfo=getinfo(line_element)
 	img_info.append(alineinfo)
 
-
+#Create new filename
+for img_info_element in img_info:
+	createnewfilename(img_info_element)
 
 print(img_info)
 
