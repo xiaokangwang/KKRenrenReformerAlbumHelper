@@ -43,6 +43,9 @@ def createnewfilename(itemtoproceed):
 
 	#create new name
 
+	the_filename_new=itemtoproceed['ind']+"-"+thehtmlname+"."+theimgext
+	itemtoproceed["new_name"]=the_filename_new
+
 #show brief use of this script
 
 print("KKRenrenReformer --- a script help user to parse saved album by Renren Reformer")
