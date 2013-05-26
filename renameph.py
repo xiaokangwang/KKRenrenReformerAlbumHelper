@@ -25,7 +25,7 @@ def getinfo(stringtoparse):
 	imgsrc = re_imgsrc.findall(stringtoparse)
 	imginfo["src"]=imgsrc[0]
 
-	showifv("image {0} was parsed into info.It's location {1} was known.".format(imginds[0],imgsrc[0]))
+	#showifv("image {0} was parsed into info.It's location {1} was known.".format(imginds[0],imgsrc[0]))
 
 	#not used and cause bug
 	#imgtitle = re_imgtitle.findall(stringtoparse)
@@ -50,7 +50,7 @@ def createnewfilename(itemtoproceed):
 
 def imgname_apply_change(applyitem):
 	copy(applyitem['src'],"./KKRenrenReformerImage/"+applyitem['new_name'])
-	showifv("image {0} was copyed into new location, with it's new name {1} .".format(applyitem['ind'],applyitem['new_name']))
+	#showifv("image {0} was copyed into new location, with it's new name {1} .".format(applyitem['ind'],applyitem['new_name']))
 	pass
 
 def showifv(message):
