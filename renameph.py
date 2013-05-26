@@ -51,6 +51,16 @@ def imgname_apply_change(applyitem):
 	copy(applyitem['src'],"./KKRenrenReformerImage/"+applyitem['new_name'])
 	pass
 
+def showifv(message):
+	if(is_verbose):
+		print(message)
+	pass
+
+def shownq(message):
+	if(is_quiet):
+		print(message)
+	pass
+
 #show brief use of this script
 
 print("KKRenrenReformer --- a script help user to parse saved album by Renren Reformer")
@@ -69,6 +79,8 @@ args = thearg.parse_args()
 #make args into data to be used later
 
 filename=args.file
+is_verbose=args.verbose
+is_quiet=args.quiet
 
 #Open file
 
@@ -95,6 +107,9 @@ for img_info_element in img_info:
 #apply new file name
 for img_info_element in img_info:
 	imgname_apply_change(img_info_element)
+
+showifv("finished")
+shownq("Done")
 
 
 
