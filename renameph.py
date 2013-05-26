@@ -45,7 +45,7 @@ def createnewfilename(itemtoproceed):
 
 	#create new name
 
-	the_filename_new=thehtmlname+"-"+itemtoproceed['ind'].zfill(3)+"."+theimgext
+	the_filename_new=thehtmlname+"-"+itemtoproceed['ind'].zfill(4)+"."+theimgext
 	itemtoproceed["new_name"]=the_filename_new
 
 def imgname_apply_change(applyitem):
