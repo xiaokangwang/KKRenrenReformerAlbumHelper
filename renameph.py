@@ -56,7 +56,7 @@ def showifv(message):
 	pass
 
 def shownq(message):
-	if(is_quiet):
+	if(is_quiet!=True):
 		print(message)
 	pass
 
