@@ -104,11 +104,13 @@ for img_info_element in img_info:
 	createnewfilename(img_info_element)
 
 #apply new file name
+filecount=0
 for img_info_element in img_info:
 	imgname_apply_change(img_info_element)
+	filecount=filecount + 1
 
 showifv("finished")
-shownq("Done")
+shownq("Done! {0} was proceed and {1} files was copyed.".format(filename,filecount))
 
 
 
