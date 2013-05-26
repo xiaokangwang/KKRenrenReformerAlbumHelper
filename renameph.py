@@ -39,9 +39,7 @@ def createnewfilename(itemtoproceed):
 	thehtmlname = htmlname[0][0]
 
 	#get image file ext
-	re_imgext = re.compile("""(\.)*(\S*?)(\.(\S*?)$)""")
-	img_ext = re_imgext.findall(itemtoproceed["src"]) 
-	theimgext = img_ext[0][-1]
+	theimgext = itemtoproceed["src"][-3:]
 
 	#create new name
 
