@@ -25,6 +25,8 @@ def getinfo(stringtoparse):
 	imgsrc = re_imgsrc.findall(stringtoparse)
 	imginfo["src"]=imgsrc[0]
 
+	showifv("image {0} was parsed into info.It's location {1} was known.".format(imginds[0],imgsrc[0]))
+
 	#not used and cause bug
 	#imgtitle = re_imgtitle.findall(stringtoparse)
 	#imginfo["tit"]=imgtitle[0]
@@ -48,6 +50,7 @@ def createnewfilename(itemtoproceed):
 
 def imgname_apply_change(applyitem):
 	copy(applyitem['src'],"./KKRenrenReformerImage/"+applyitem['new_name'])
+	showifv("image {0} was copyed into new location, with it's new name {1} .".format(applyitem['ind'],applyitem['new_name']))
 	pass
 
 def showifv(message):
@@ -84,32 +87,38 @@ is_quiet=args.quiet
 #Open file
 
 f = open(filename, 'r')
+showifv("html file {0} was opened.".format(filename))
 
 #read file
 
 htmldata=f.read()
+showifv("The content of html file {0} was loaded.".format(filename))
 
 #progress the html file
 
 lines=reimageline(htmldata)
+showifv("We have parsed html file {0} ,and {1} record was come into known.".format(filename,len(lines)))
 
 img_info=[]
 
 for line_element in lines:
 	alineinfo=getinfo(line_element)
 	img_info.append(alineinfo)
+showifv("information of {0} image was known.".format(len(img_info)))
 
 #Create new filename
 for img_info_element in img_info:
 	createnewfilename(img_info_element)
+showifv("New name of {0} image was create.".format(len(img_info)))
 
 #apply new file name
 filecount=0
 for img_info_element in img_info:
 	imgname_apply_change(img_info_element)
 	filecount=filecount + 1
+showifv("New name of {0} image was applyed.".format(len(img_info)))
 
-showifv("finished")
+
 shownq("Done! {0} was proceed and {1} files was copyed.".format(filename,filecount))
 
 
