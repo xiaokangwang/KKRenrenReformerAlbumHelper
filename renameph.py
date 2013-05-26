@@ -16,7 +16,7 @@ def getinfo(stringtoparse):
 	imginfo={}
 
 	re_imgind = re.compile(""" index="(\d+)" """)
-	re_imgsrc = re.compile(""" src="([^\t\n\r\f\v]+)" """)
+	re_imgsrc = re.compile(""" src="([^\t\n\r\f\v]+?)" """)
 	re_imgtitle = re.compile(""" title="([^\t\n\r\f\v]+)">""")
 
 	imginds = re_imgind.findall(stringtoparse)
