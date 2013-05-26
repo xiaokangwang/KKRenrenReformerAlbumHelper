@@ -25,8 +25,9 @@ def getinfo(stringtoparse):
 	imgsrc = re_imgsrc.findall(stringtoparse)
 	imginfo["src"]=imgsrc[0]
 
-	imgtitle = re_imgtitle.findall(stringtoparse)
-	imginfo["tit"]=imgtitle[0]
+	#not used and cause bug
+	#imgtitle = re_imgtitle.findall(stringtoparse)
+	#imginfo["tit"]=imgtitle[0]
 
 	return imginfo
 
